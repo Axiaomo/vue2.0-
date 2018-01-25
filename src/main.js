@@ -9,6 +9,10 @@ Vue.config.productionTip = false
 import MintUI from 'mint-ui';
 import 'mint-ui/lib/style.css';
 Vue.use(MintUI);
+// axios
+import axios from 'axios';
+Vue.prototype.$ajax= axios;
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

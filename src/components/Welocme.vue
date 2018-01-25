@@ -22,7 +22,7 @@
 export default {
   data() {
     return {
-      isHide: false,
+      isHide: true//false,
     };
   },
   created() {
@@ -38,7 +38,7 @@ export default {
         // 3.5秒后隐藏欢迎界面
         setTimeout(() => {
           this.isHide = true;
-        }, 343500);
+        }, 3500);
       } else {
         this.isHide = true;
       }
