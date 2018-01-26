@@ -1,3 +1,18 @@
-.swipe{
-    margin-top: 32px;
+.swipe {
+    height: 220px;
+    color:#fff;
+    font-size: 20px;
+    img{
+        position: absolute;
+        width: 100%;
+        bottom: -75px;
+    }
+    .top-story-title{
+        position: absolute;
+        z-index: 2;
+        bottom: 0;
+        padding: 30px 20px;
+        line-height: 25px;
+        color:#fff;
+    }
 }

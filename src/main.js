@@ -11,7 +11,8 @@ import 'mint-ui/lib/style.css';
 Vue.use(MintUI);
 // axios
 import axios from 'axios';
-Vue.prototype.$ajax= axios;
+import VueAxios from 'vue-axios'
+Vue.use(VueAxios, axios);
 
 /* eslint-disable no-new */
 new Vue({
