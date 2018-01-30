@@ -14,6 +14,7 @@
 
 <script>
 import router from "../router";
+import {attachImageUrl} from "../assets/js/index";
 export default {
   data() {
     return {
@@ -34,18 +35,11 @@ export default {
     gettopStories() {
       this.axios.get("api/news/latest").then(res => {
         this.topStories = res.data.top_stories;
-        console.log("aaaaaa");
       });
     },
-    // 修改图片禁止访问问题
-    attachImageUrl(srcUrl) {
-      if (srcUrl !== undefined) {
-        return srcUrl.replace(
-          /http\w{0,1}:\/\/p/g,
-          "https://images.weserv.nl/?url=p"
-        );
+     attachImageUrl(url){
+        return attachImageUrl(url)
       }
-    }
   }
 };
 </script>

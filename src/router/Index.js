@@ -19,6 +19,10 @@ export default new Router({
       path: '/newsDetail/:id',
       name: 'newsDetail',
       component: NewsDetail
+    }, {
+      path: '/node',
+      name: 'Node',
+      component: Node
     }
   ]
 })
