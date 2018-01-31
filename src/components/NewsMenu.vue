@@ -5,7 +5,7 @@
       <li class="menu-item" @click="goBack()">
         <i class="icon iconfont icon-back"></i>
       </li>
-      <li class="menu-item">
+      <li class="menu-item" @click="goNext()">
         <i class="icon iconfont icon-moreunfold"></i>
       </li>
       <li class="menu-item" @click="thumbUp" :class="{'dianzan-active': isDianzan}">
@@ -16,8 +16,8 @@
         <i class="icon iconfont icon-fenxiang"></i>
       </li>
       <li class="menu-item">
-        <i class="icon iconfont icon-pinglun"></i>
-        <span class="comments-number">{{this.$store.state.comments}}</span>
+          <i class="icon iconfont icon-pinglun"></i>
+          <span class="comments-number">{{this.$store.state.comments}}</span>
       </li>
     </ul>
     <!-- 分享组件 -->
@@ -38,7 +38,6 @@ export default {
       popupVisible: false // 分享组件是否展示
     };
   },
-
   created() {
     this.fetchStoryExtra();
   },
@@ -93,7 +92,15 @@ export default {
     // 隐藏分享菜单（子传父）
     hideMenu() {
       this.popupVisible = false;
-    }
+    },
+    // 载入下一篇新闻
+    // goNext(){
+    //     router.push({
+    //       name:"newsDetail",
+    //       params:{id:this.$store.state.nexId},
+
+    //     })
+    // },
   }
 };
 </script>

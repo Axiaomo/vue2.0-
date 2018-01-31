@@ -9,7 +9,7 @@
       <span class="image-source">图片:{{data.image_source}}</span>
     </div>
     <div class="body-wrap" v-html="this.data.body"></div>
-  <news-menu :newsid="id"></news-menu>
+    <news-menu :newsid="id"></news-menu>
   </div>
 </template>
 <script>
@@ -17,11 +17,10 @@
 import { attachImageUrl } from "./../assets/js/index";
 import NewsMenu from "../components/NewsMenu";
 export default {
-  
   data() {
     return {
       data: {
-        id:0
+        id: 0
       }
     };
   },
@@ -40,14 +39,17 @@ export default {
       return attachImageUrl(url);
     },
     fetchData() {
-       this.id = this.$route.params.id;
-      this.axios.get("/api/news/" + this.id).then(res => {
-        // body图片链接
-        res.data.body = this.attachImageUrl(res.data.body);
-        this.data = res.data;
-      }).catch(error=>{
-        console.log(error)
-      });
+      this.id = this.$route.params.id;
+      this.axios
+        .get("/api/news/" + this.id)
+        .then(res => {
+          // body图片链接
+          res.data.body = this.attachImageUrl(res.data.body);
+          this.data = res.data;
+        })
+        .catch(error => {
+          console.log(error);
+        });
     }
   }
 };
